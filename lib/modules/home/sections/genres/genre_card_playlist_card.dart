@@ -112,13 +112,13 @@ class GenreSectionCardPlaylistCard extends HookConsumerWidget {
               ),
               Text(
                 playlist.name!,
-                maxLines: 2,
+                maxLines: 1,
                 overflow: TextOverflow.ellipsis,
               ).semiBold().small(),
               if (playlist.description != null)
                 Text(
                   playlist.description?.unescapeHtml().cleanHtml() ?? "",
-                  maxLines: 2,
+                  maxLines: 1,
                   overflow: TextOverflow.ellipsis,
                 ).xSmall().muted(),
             ],
