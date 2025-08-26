@@ -21,7 +21,7 @@ class AndroidBuildCommand extends Command with BuildCommandCommonSteps {
     await bootstrap();
 
     await shell.run(
-      "flutter build apk --flavor ${CliEnv.channel.name}",
+      "fvm flutter build apk --flavor ${CliEnv.channel.name}",
     );
 
     await dotEnvFile.writeAsString(
@@ -51,9 +51,9 @@ class AndroidBuildCommand extends Command with BuildCommandCommonSteps {
 
     await shell.run(
       """
-      dart run build_runner clean
-      dart run build_runner build --delete-conflicting-outputs
-      flutter build appbundle --flavor ${CliEnv.channel.name}
+      fvm dart run build_runner clean
+      fvm dart run build_runner build --delete-conflicting-outputs
+      fvm flutter build appbundle --flavor ${CliEnv.channel.name}
       """,
     );
 

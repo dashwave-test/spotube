@@ -119,7 +119,23 @@ Enhancement suggestions are tracked as [GitHub issues](https://github.com/KRTirt
 
 Do the following:
 
+- Install [FVM (Flutter Version Manager)](https://fvm.app/) to manage Flutter SDK versions
+  ```bash
+  # On macOS/Linux using Homebrew
+  $ brew tap leoafarias/fvm
+  $ brew install fvm
+  
+  # On Windows using Chocolatey
+  $ choco install fvm
+  
+  # Using pub (Dart package manager)
+  $ dart pub global activate fvm
+  ```
 - Download the latest Flutter SDK (>=3.16.0) & enable desktop support
+  ```bash
+  # FVM will automatically use the correct Flutter version as specified in .fvmrc
+  $ fvm install
+  ```
 - Install Development dependencies in linux
   - Debian (>=12/Bookworm)/Ubuntu
     ```bash
@@ -138,11 +154,11 @@ Do the following:
 - Create a `.env` in root of the project following the `.env.example` template
 - Now run the following to bootstrap the project
   ```bash
-  flutter pub get && dart run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns
+  fvm flutter pub get && fvm dart run build_runner build --delete-conflicting-outputs --enable-experiment=records,patterns
   ```
 - Finally run these following commands in the root of the project to start the Spotube Locally
   ```bash
-  flutter run -d <window|macos|linux|(<android-device-id>)>
+  fvm flutter run -d <window|macos|linux|(<android-device-id>)>
   ```
 
 Do debugging/testing/build etc then submit to us with PR against the development branch (dev) & we'll review your code
