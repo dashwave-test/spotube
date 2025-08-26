@@ -45,6 +45,7 @@ utilizing selected music provider API and YouTube®, Piped.video or JioSaavn as 
 
 Btw it's not just another Electron app 😉
 
+<a href="https://fvm.app/"><img alt="Built with FVM" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/built-with/fvm_vector.svg"></a>
 <a href="https://spotube.krtirtho.dev"><img alt="Visit the website" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/documentation/website_vector.svg"></a>
 <a href="https://discord.gg/uJ94vxB6vg"><img alt="Discord Server" height="56" src="https://cdn.jsdelivr.net/npm/@intergrav/devins-badges@3/assets/cozy/social/discord-plural_vector.svg"></a>
 

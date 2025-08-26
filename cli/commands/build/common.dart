@@ -8,7 +8,13 @@ import 'package:pubspec_parse/pubspec_parse.dart';
 import '../../core/env.dart';
 
 mixin BuildCommandCommonSteps on Command {
-  final shell = Shell();
+  // Use FVM for all Flutter and Dart commands
+  final shell = Shell(
+    environment: {
+      ...Platform.environment,
+      'PATH': '${Platform.environment['PATH']}:${Directory.current.path}/.fvm/flutter_sdk/bin',
+    },
+  );
   Directory get cwd => Directory.current;
 
   Pubspec? _pubspec;
@@ -57,9 +63,9 @@ mixin BuildCommandCommonSteps on Command {
 
     await shell.run(
       """
-      flutter pub get
-      dart run build_runner build --delete-conflicting-outputs
-      dart pub global activate flutter_distributor
+      fvm flutter pub get
+      fvm dart run build_runner build --delete-conflicting-outputs
+      fvm dart pub global activate flutter_distributor
       """,
     );
   }
